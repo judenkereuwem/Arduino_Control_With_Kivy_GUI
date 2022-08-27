@@ -1,0 +1,39 @@
+
+WidgetsExample:
+
+
+
+<WidgetsExample>:
+	cols: 3
+	Switch:
+		id: my_switch
+		on_active: root.on_switch_active(self)
+		size_hint: None, 1
+		width: "100dp"
+		active: True
+	Slider:
+		id: my_slider
+		min: 0
+		max: 255 
+		#value: 50
+		on_value: root.on_slider_value(self)
+		#orientation: "vertical"
+		disabled: not my_switch.active
+		size_hint: None, 1
+		width: "200dp"
+	BoxLayout:
+		orientation: "horizontal"
+		Label:
+			text: str(int(my_slider.value))
+			size_hint: None, 1
+			width: "100dp"
+		#ProgressBar:
+			#max: 100
+			#value: my_slider.value
+			#size_hint: None, 1
+			#width: "200dp"
+	
+
+
+
+

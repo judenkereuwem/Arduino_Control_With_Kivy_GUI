@@ -1,0 +1,33 @@
+
+WidgetsExample:
+
+
+<WidgetsExample>:
+	cols: 3
+	ToggleButton:
+		text: "OFF"
+		on_state: root.on_toggle_button_state(self)
+		size_hint: None, 1
+		width: "100dp"
+	Button:
+		text: "Count"
+		on_press: root.on_button_click()
+		disabled: not root.count_enabled
+		size_hint: None, 1
+		width: "100dp"
+	Label:
+		text: root.my_text
+		font_name: "RESOURCES_KIVY/1_THE_LAB/2_the_lab_widgets/fonts/Lcd.ttf"
+		font_size: "100dp"
+		color: 1, .5, 1, 1
+		size_hint: None, 1
+		width: "100dp"
+	
+	
+		
+	
+
+
+
+
+

@@ -1,0 +1,109 @@
+#BoxLayoutExample:
+#AnchorLayoutExample: 
+#GridLayoutExample:
+#StackLayoutExample
+#ScrollViewExample
+#PageLayoutExample:
+WidgetsExample:
+
+
+
+
+
+
+<WidgetsExample>:
+	cols: 3
+	ToggleButton:
+		text: "OFF"
+		on_state: root.on_toggle_button_state(self)
+		size_hint: None, 1
+		width: "100dp"
+	Button:
+		text: "Count"
+		on_press: root.on_button_click()
+		disabled: not root.count_enabled
+		size_hint: None, 1
+		width: "100dp"
+	Label:
+		text: root.my_text
+		font_name: "RESOURCES_KIVY/1_THE_LAB/2_the_lab_widgets/fonts/Lcd.ttf"
+		font_size: "80dp"
+		color: 1, .5, 1, 1
+		size_hint: None, 1
+		width: "100dp"
+	Switch:
+		id: my_switch
+		on_active: root.on_switch_active(self)
+		size_hint: None, 1
+		width: "100dp"
+		active: True
+	Slider:
+		id: my_slider
+		min: 0
+		max: 100 
+		#value: 50
+		#on_value: root.on_slider_value(self)
+		#orientation: "vertical"
+		disabled: not my_switch.active
+		size_hint: None, 1
+		width: "200dp"
+	BoxLayout:
+		orientation: "horizontal"
+		Label:
+			text: str(int(my_slider.value))
+			size_hint: None, 1
+			width: "100dp"
+		ProgressBar:
+			max: 100
+			value: my_slider.value
+			size_hint: None, 1
+			width: "200dp"
+	
+
+
+
+<PageLayoutExample@PageLayout>:
+	MainWidget:
+	BoxLayoutExample:
+	AnchorLayoutExample:
+	StackLayoutExample:
+
+
+<ScrollViewExample@ScrollView>:
+	StackLayoutExample:
+		size_hint: 1, None
+		height: self.minimum_height
+
+<StackLayoutExample>:
+	# left-right top-bottom
+	# orientation: "lr-tb"
+	# padding: ("20dp", "20dp", "20dp", "20dp")
+	# spacing: "20dp", "20dp"
+
+
+
+
+
+
+
+
+
+<AnchorLayoutExample>:
+	# right, left, center
+	anchor_x: "center"
+
+	# bottom, top, center
+	anchor_y: "center"
+
+	BoxLayout:
+		size_hint: .2, .2
+		Button:
+			text: "A"
+		Button:
+			text: "B"
+		
+
+
+		
+
+
